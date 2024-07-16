@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <title>inscription</title>
+</head>
+
+<body>
+    <header>
+        <h1>ENI - MEMORY - Accueil</h1>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inscription.html">S'inscrire</a></li>
+            <li><a href="connexion.html">Se connecter</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="jouer.html">Jouer</a></li>
+
+        </ul>
+
+
+    </nav>
+
+    <main>
+<form id="contactForm" class="form">
+    <label for="username">Nom d'utilisateur:</label>
+    <input type="text" id="username" name="username" class="input" required />
+    <div class="message erreur" id="mistake-username"></div>
+
+    <label for="mail">Entrez votre email :</label>
+    <input type="email" id="mail" name="mail" class="input" required />
+    <div class="message erreur" id="mistake-mail"></div>
+
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" class="input" required />
+    <div class="message erreur" id="mistake-password"></div>
+
+    <label for="confirmPassword">Confirmez le mot de passe :</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" class="input" required />
+    <div class="message erreur" id="mistake-confirmPassword"></div>
+
+    <button type="submit" class="btn">Création du compte</button>
+    <input type="reset" value="Annuler" />
+</form>
+<div class="message succes" id="message-succes"></div>
+</div>
+
+
+       
+        
+
+
+
+
+    </main>
+<script src="./js/signUpForm.js" type="module"></script>
+</body>
+
+</html>
