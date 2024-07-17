@@ -13,7 +13,8 @@ function validateEmail(email) {
 }*/
 
 function validateConfirmPassword(password, confirmPassword) {
-  return password === confirmPassword;
+  
+    return password === confirmPassword;
 }
 
 function validateUsername(username) {

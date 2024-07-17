@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" >
 
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,16 @@
     <title>profil</title>
 </head>
 
-<body>
+<body data-user-mail="mail@example.com">
+   
     <header>
-        <h1>ENI - MEMORY - Accueil</h1>
-
+        <h1>ENI - MEMORY - Mon Profil</h1>
+    <button id="disconnect">Déconnexion</button>
     </header>
+    
+        
 
+    
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -28,14 +32,15 @@
 
     <main>
 
-
+            <h1>Bonjour <span id="username"></span> !</h1>
+            <p>Votre adresse e-mail est : <span id="mail"></span></p>
 
 
 
 
 
     </main>
-
+    <script src="./js/modulesForm/profil.js" type="module"></script>
 </body>
 
 </html>

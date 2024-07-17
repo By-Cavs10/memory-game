@@ -1,22 +1,14 @@
 import {validateEmail,validateConfirmPassword,validateUsername} from "./modulesForm/validators.js";
-import { saveUser } from "./modulesForm/storage.js";
+import { getUsers, saveUser } from "./modulesForm/storage.js";
+
 
 // Target
-const $form = document.getElementById('contactForm')
-// Listener
-// $form.addEventListener('submit', function (event) {
-//     // Block auto
-//     event.preventDefault()
-//     // Select inputs
-//     console.log('form (event)', event);
-//     console.log('form (this)', this);
-//     console.log('form-inputs (event)', event.target.querySelectorAll('input'));
-//     console.log('form-inputs (this)', this.querySelectorAll('input'));
-// })
+const $form = document.getElementById('signUpForm')
+
 $form.addEventListener('submit', (event) => {
     // Variables de gestion
     const errors = []
-    const user = {}
+    const user = {};
     // Block auto
     event.preventDefault()
     // Select inputs
@@ -31,14 +23,13 @@ $form.addEventListener('submit', (event) => {
                 if (!validateEmail(input.value)) errors.push([input.id, "L'email n'est pas valide"])
                 else user.mail = input.value
                 break;
-            case "motdepasse":
-                console.log("motdepasse");
-                 if (!validatePassword(input.value)) errors.push([input.id, "motdepasse n'est pas valide"])
-                 else user.motdepasse = input.value
+            case "password":
+                console.log("password");
+                user.password = input.value
                 break;
             case "confirmPassword":
                 console.log("confirmPassword");
-                 if (!validateConfirmPassword(input.value)) errors.push([input.id, "les mots de passe ne correspondent pas"])
+                 if (!validateConfirmPassword(user.password,input.value))  errors.push([input.id, "les mots de passe ne correspondent pas"])
                  else user.confirmPassword = input.value
                 break;
             case "username":
@@ -65,9 +56,17 @@ $form.addEventListener('submit', (event) => {
         // Sauvegarde
         saveUser(user)
         document.getElementById('message-succes').textContent = "User saved"
+        window.location.href = 'connexion.html';
     }
 })
 
 validateUsername(username)
 
 validateConfirmPassword(password, confirmPassword)
+
+
+
+
+
+  // Rediriger l'utilisateur vers la page de connexion
+ 
