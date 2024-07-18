@@ -198,3 +198,18 @@ main {
 #success-message p {
   font-size: 1.2rem;
 }
+
+
+/* Tablette */
+@media screen and (max-width: 768px) {
+  .memory-card {
+    width: calc(33.333% - 15px);
+  }
+}
+
+/* Smartphone */
+@media screen and (max-width: 480px) {
+  .memory-card {
+    width: calc(50% - 15px);
+  }
+}
