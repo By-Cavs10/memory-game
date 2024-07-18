@@ -1,21 +1,21 @@
-import {validateEmail,validateConfirmPassword,validateUsername} from "./modulesForm/validators.js";
-import { getUsers, saveUser } from "./modulesForm/storage.js";
+import {validateEmail,validatePassword,validateConfirmPassword,validateUsername} from "./modulesForm/validators.js";
+import { saveUser } from "./modulesForm/storage.js";
 
 
-// Target
+
 const $form = document.getElementById('signUpForm')
 
 $form.addEventListener('submit', (event) => {
-    // Variables de gestion
+   
     const errors = []
     const user = {};
-    // Block auto
+   
     event.preventDefault()
-    // Select inputs
-    // console.log(event.target.querySelectorAll('input'));
+    
+    
     const $inputs = event.target.querySelectorAll('input')
 
-    // Parcours
+    
     $inputs.forEach(input => {
         switch (input.id) {
             case "mail":
@@ -25,6 +25,7 @@ $form.addEventListener('submit', (event) => {
                 break;
             case "password":
                 console.log("password");
+                 if (!validatePassword(user.password,input.value))  errors.push([input.id, "Vérifiez si le mot de passe a au moins 8 caractères, 1 majuscule, 1 minuscule et 1 caractère spécial"])
                 user.password = input.value
                 break;
             case "confirmPassword":
@@ -45,7 +46,7 @@ $form.addEventListener('submit', (event) => {
     // Check Final
     console.log('Errors', errors);
     if (errors.length > 0) {
-        // Insertion des errors
+        
         errors.forEach(error => {
             console.log('error', error);
             const $displayErrorTarget = document.getElementById(`mistake-${error[0]}`)
@@ -53,7 +54,7 @@ $form.addEventListener('submit', (event) => {
             $displayErrorTarget.innerHTML = error[1]
         })
     } else {
-        // Sauvegarde
+        
         saveUser(user)
         document.getElementById('message-succes').textContent = "User saved"
         window.location.href = 'connexion.html';
@@ -68,5 +69,5 @@ validateConfirmPassword(password, confirmPassword)
 
 
 
-  // Rediriger l'utilisateur vers la page de connexion
+  
  

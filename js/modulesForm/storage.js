@@ -24,9 +24,10 @@ function getUsers() {
     // return JSON.parse(localStorage.getItem(KEY_USER)) || []
 }
 
-function getUserById(id) {
+
+export function getUserByMail(mail) {
   const users = getUsers();
-  return users.find(user => user.id === id);
+  return users.find(user => user.mail === mail);
 }
 
-export { saveUser, getUsers, getUserById }
+export { saveUser, getUsers,  }

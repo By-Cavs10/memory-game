@@ -39,7 +39,7 @@ if (isMatch) {
     unflipCards();
   }
 
-  // Incrémenter le compteur à chaque tour
+  
   incrementFlips();
 }
 
@@ -51,8 +51,14 @@ function disableCards() {
   if (document.querySelectorAll('.memory-card.flip').length === cards.length) {
     clearInterval(timerInterval);
     const elapsedTime = new Date() - startTime;
-    const message = `Félicitations ! Vous avez trouvé toutes les paires en ${flipCount} coups et ${formatTime(elapsedTime)} !`;
-    alert(message);
+   
+    
+  // Mettre à jour le contenu du message
+  document.getElementById('flip-count').textContent = flipCount;
+  document.getElementById('elapsed-time').textContent = formatTime(elapsedTime);
+
+  // Afficher le message
+  document.getElementById('success-message').classList.remove('hidden');
   }
 
   resetBoard();
@@ -66,7 +72,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 500);
 }
 
 function resetBoard() {
@@ -120,15 +126,15 @@ function resetGame() {
     card.addEventListener('click', flipCard);
   });
 
-  // Réinitialiser le timer
+ 
   clearInterval(timerInterval);
   startTime = null;
   document.querySelector('.timer').textContent = '00:00';
 
-  // Réinitialiser les coups
+  
   flipCount = 0;
   document.querySelector('.flips').textContent = flipCount;
 
-  // Réinitialiser le tableau
+  
   resetBoard();
 }

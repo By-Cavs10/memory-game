@@ -1,102 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styleGame.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>jouer</title>
-</head>
+  </head>
 
-<body>
-    <header>
+  <body>
+    <div class="banniere">
+      <header>
         <h1>ENI - MEMORY - Jouer</h1>
+      </header>
 
-    </header>
-
-    <nav>
+      <nav class="categorie">
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="inscription.html">S'inscrire</a></li>
-            <li><a href="connexion.html">Se connecter</a></li>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="jouer.html">Jouer</a></li>
-
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="inscription.html">S'inscrire</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="jouer.html">Jouer</a></li>
         </ul>
-
-
-    </nav>
-
+      </nav>
+    </div>
     <main>
+      <div class="counter">
+        <span class="flips">0</span> coups - <span class="timer">00:00</span>
 
+        <div id="success-message" class="hidden">
+          <p>
+            <strong>Félicitations !</strong> Vous avez trouvé toutes les paires
+            en <span id="flip-count"></span> coups et
+            <span id="elapsed-time"></span> !
+          </p>
+        </div>
+      </div>
 
-<div class="counter">
-    <span class="flips">0</span> coups - <span class="timer">00:00</span>
-</div>
-
-
-    <section class="memory-game">
+      <section class="memory-game">
         <div class="memory-card" data-framework="apple">
-            <img class="front-face" src="./images/memory-legume/1.svg" alt="apple" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
+          <img class="front-face" src="./images/batman/1.svg" alt="apple" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
         </div>
         <div class="memory-card" data-framework="apple">
-            <img class="front-face" src="./images/memory-legume/1.svg" alt="apple" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-    
-    <div class="memory-card" data-framework="banana">
-        <img class="front-face" src="./images/memory-legume/2.svg" alt="banana" />
-        <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-    </div>
-        
-    <div class="memory-card" data-framework="banana">
-         <img class="front-face" src="./images/memory-legume/2.svg" alt="banana" />
-         <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-    </div>
-    
-        <div class="memory-card" data-framework="broccoli">
-            <img class="front-face" src="./images/memory-legume/3.svg" alt="broccoli" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-        <div class="memory-card" data-framework="broccoli">
-            <img class="front-face" src="./images/memory-legume/3.svg" alt="broccoli" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-    
-        <div class="memory-card" data-framework="cherry">
-            <img class="front-face" src="./images/memory-legume/4.svg" alt="broccoli" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-        <div class="memory-card" data-framework="cherry">
-            <img class="front-face" src="./images/memory-legume/4.svg" alt="broccoli" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
+          <img class="front-face" src="./images/batman/1.svg" alt="apple" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
         </div>
 
-    
-        <div class="memory-card" data-framework="pimento">
-            <img class="front-face" src="./images/memory-legume/5.svg" alt="pimento" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
+        <div class="memory-card" data-framework="banana">
+          <img class="front-face" src="./images/batman/2.png" alt="banana" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
         </div>
-        <div class="memory-card" data-framework="pimento">
-            <img class="front-face" src="./images/memory-legume/5.svg" alt="pimento" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-    
-        <div class="memory-card" data-framework="strawberry">
-            <img class="front-face" src="./images/memory-legume/6.svg" alt="strawberry" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-        <div class="memory-card" data-framework="strawberry">
-            <img class="front-face" src="./images/memory-legume/6.svg" alt="strawberry" />
-            <img class="back-face" src="./images/wwelogo.jpg" alt="wwelogo" />
-        </div>
-    </section>
 
-    <p>Appuie sur la barre d'espace pour redemarrer la partie</p>
+        <div class="memory-card" data-framework="banana">
+          <img class="front-face" src="./images/batman/2.png" alt="banana" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+
+        <div class="memory-card" data-framework="broccoli">
+          <img class="front-face" src="./images/batman/3.png" alt="broccoli" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+        <div class="memory-card" data-framework="broccoli">
+          <img class="front-face" src="./images/batman/3.png" alt="broccoli" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+
+        <div class="memory-card" data-framework="cherry">
+          <img class="front-face" src="./images/batman/4.png" alt="broccoli" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+        <div class="memory-card" data-framework="cherry">
+          <img class="front-face" src="./images/batman/4.png" alt="broccoli" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+
+        <div class="memory-card" data-framework="pimento">
+          <img class="front-face" src="./images/batman/5.png" alt="pimento" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+        <div class="memory-card" data-framework="pimento">
+          <img class="front-face" src="./images/batman//5.png" alt="pimento" />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+
+        <div class="memory-card" data-framework="strawberry">
+          <img
+            class="front-face"
+            src="./images/batman//6.png"
+            alt="strawberry"
+          />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+        <div class="memory-card" data-framework="strawberry">
+          <img
+            class="front-face"
+            src="./images/batman//6.png"
+            alt="strawberry"
+          />
+          <img
+            class="back-face"
+            src="./images/batman logo.jpg"
+            alt="batman logo.jpg"
+          />
+        </div>
+      </section>
+
+      <p class="rejouer-button">Press Espace to Restart</p>
     </main>
 
     <script src="js/jeu.js"></script>
-</body>
-
+  </body>
 </html>

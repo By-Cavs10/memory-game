@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>profil</title>
+
 </head>
 
-<body data-user-mail="mail@example.com">
+<body >
    
     <header>
         <h1>ENI - MEMORY - Mon Profil</h1>
-    <button id="disconnect">Déconnexion</button>
+    
     </header>
     
         
@@ -31,15 +34,20 @@
     </nav>
 
     <main>
-
-            <h1>Bonjour <span id="username"></span> !</h1>
+        <div id="profileInfo">
+            <h2>Bonjour <span id="username"></span> !</h1>
             <p>Votre adresse e-mail est : <span id="mail"></span></p>
-
+        </div>
 
 
 
 
     </main>
+
+    <footer> 
+        <button id="disconnect">Déconnexion</button>
+    
+    </footer>
     <script src="./js/modulesForm/profil.js" type="module"></script>
 </body>
 
